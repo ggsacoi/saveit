@@ -2,9 +2,9 @@ const slider = () => {
     const buttonleft = document.getElementById("A");
     const buttonright = document.getElementById("B");
     const slider = document.querySelector(".photos");
-    const suns = document.querySelector(".suns");
+    const section = document.querySelector("section");
     const menu = document.querySelector(".options");
-    const checker = document.getElementById(".see");
+    const checker = document.getElementById("see");
     const scrollAmount = window.innerWidth;
     let currentTranslateX = 0;
 
@@ -20,14 +20,11 @@ const slider = () => {
         }
     });
 
-
-// suns.addEventListener("click", ()=> {
-//        if (menu.classList.contains("show") ) {
-//            menu.classList.remove("show")
-//        } {
-//          menu.classList.add("show");
-//        }
-//    });
-};
+ section.addEventListener("click", () => {
+        if (checker.checked) {
+            checker.checked = false;
+        }
+    });
+ };
 
 window.addEventListener("load", slider);

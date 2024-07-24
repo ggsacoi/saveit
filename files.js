@@ -48,6 +48,7 @@ submit.addEventListener('click', async (e) => {
           adresse: adresse,
           lastname: lastname,
           number: number,
+          email: email,
         });
       })
         .then(() => {
