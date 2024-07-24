@@ -1,0 +1,348 @@
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+@media (max-width: 650px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: max-content;
+    }
+        .navbar {
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        height: 70px;
+        display: flex;
+        flex-direction: row;
+        box-shadow: 0px 0px 30px 10px;
+        z-index: 2;
+        justify-content: space-between;
+        background-color: white;
+        border-bottom: 1px solid black;
+    }
+    .research {
+        display: none;
+        height: auto;
+    }
+
+    .boxresearch {
+        align-content: center;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .trop {
+        
+        display: none;
+    }
+
+    #see:checked ~ .oui {
+        display: none;
+    }
+    
+    #see:checked ~ .non {
+        display: block;
+    }
+    
+    #see:checked ~ .options {
+        position: absolute;
+        left: 0%;
+    }
+    
+    #unsee:checked ~ .oui {
+        display: block;
+    }
+    
+    #unsee:checked ~ .non {
+        display: none;
+    }
+    
+    #unsee:checked ~ .options {
+        position: absolute;
+        left: -100%;
+    }
+
+    #view:checked ~ .research {
+        display: block;
+        position: absolute;
+        margin-top: 50px;
+        margin-left: 7px;
+    }
+
+    #unview:checked ~ .fa-solid .fa-magnifying-glass {
+        display: none;
+    }
+    
+    .name {
+        align-content: center;
+        height: cover;
+    }
+
+    .rightside {
+        display: flex;
+        width: 70px;
+        height: 70px;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .options {
+        display: flex;
+        position: fixed;
+        color: black;
+        top: 70px;
+        width: 80vw;
+        height: 100vh;
+        background-color: rgb(255, 255, 255);
+        justify-content: center;
+        z-index: 1;
+        padding: none;
+        overflow: hidden;
+        margin: none;
+        border-right: 1px solid black;
+        transition: all 0.3s ease;
+        list-style: none;
+        text-decoration: none;
+        left: -100%;
+    }
+
+    .h1 {
+        color: black;
+    }
+
+    ul {
+        flex-direction: column;
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+        text-decoration: none;
+        list-style: none;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 700;
+        color: black;
+    }
+
+    .li {
+        color: black;
+        list-style: none;
+        text-decoration: none;
+        color: white;
+        flex-direction: row;
+        display: flex;
+        width: 250px;
+        height: 60px;
+        padding: 30px;
+        margin-bottom: 30px;
+        font-family: Arial, Helvetica, sans-serif;
+
+        }
+    .listoptions .a {
+        color: rgb(0, 0, 0);
+        width: 250px;
+        height: 60px;
+        padding: 30px;
+        margin-bottom: 30px;
+        text-decoration: none;
+        list-style: none;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-weight: 700;
+    }
+
+    .fa-magnifying-glass {
+        padding: 15px;
+    }
+
+    .fa-bars {
+        color:rgb(0, 0, 0);
+        padding: 15px;
+        font-size: 2rem;
+    }
+
+    .oui {
+        display: flex;
+        right: 5px;
+    }
+
+    .non {
+        color:rgb(0, 0, 0);
+        padding: 15px;
+        font-size: 2rem;
+        display: none;
+    }
+
+    .page  {
+        display: flex;
+        position: relative;
+        top: 70px;
+        flex-shrink: 0;
+        flex-grow: 1;
+    }
+    section {
+        display: block;
+        position: relative;
+        top: 70px;
+    }
+    .hautdelapage {
+        position: relative;
+        width: 100%;
+        height: 20vh;
+        flex-direction: row;
+        display: flex;
+        top: 0;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .alldevice {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2px;
+
+    }
+    
+    .boxdevice {
+        width: 2rem;
+        height: 2rem;
+        background-color: gray;
+        display: flex;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        margin: 0 1vw 0 1vw;
+    } 
+    .boxstore {
+        width: 2rem;
+        height: 2rem;
+        background-color: rgb(0, 0, 0);
+        color: white;
+        display: flex;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        margin: 0 1vw 0 1vw;
+        position: absolute;
+        top: 55px;
+        z-index: 3;
+    } 
+
+    .numbers {
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        background-color: red;
+        position: absolute;
+        display: flex;
+        top: 25px;
+        left: 15px;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #boxmdr {
+        display: flex;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5rem;
+        width: 4rem;
+        height: 4rem;
+    
+    }
+    
+    #mdr {
+        color: red;
+    }
+    
+    .item {
+        width: 49vw;
+        height: 40vh;
+        display: flex;
+        align-items: center;
+        background-color: rgb(255, 255, 255);
+        border: solid 1px red;
+        flex-direction: column;
+        overflow: none;
+    }
+    .photo {
+        display: flex;
+        height: 48vw;
+        width: 50vw;
+        justify-content: center;
+    }
+
+    .one {
+        width: 47vw;
+
+    }
+    .thow {
+        display: none;
+    }
+    .three {
+        display: none;
+    }
+
+    h4 {
+        text-align: center;
+    }
+
+    h2 {
+        padding-top: 3vh;
+        color: rgb(0, 0, 0);
+    }
+    footer {
+        background-color: black;
+        width: 100%;
+        height: 25vh;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        top: 70px;
+        display: flex;
+    }
+    .brands-item {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        height: min-content;
+    }
+    .boxofcont {
+        width: 20vw;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        color: white;
+        align-items: center;
+    }
+
+    .boxofcont .span {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .boxofcont .span .p {
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        max-width: 20vw;
+    }
+
+    .brands-item .fa-brands {
+        font-size: 2rem;
+    }
+    footer p {
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        position: relative;
+    }
+}

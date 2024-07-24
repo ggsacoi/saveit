@@ -1,0 +1,178 @@
+
+body{
+    display: flex ;
+    height: max-content;
+    flex-direction: column;
+    overflow-x: hidden;
+    min-height: 132vh;
+}
+.suns {
+    display: flex;
+    top: 70px;
+    min-height: 100vh;
+}
+.navbar {
+    width: 100VW;
+}
+.boxdevices {
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+    background-color: gray;
+    display: flex;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 1vw 0 1vw;
+} 
+
+.boxofglass {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    flex-direction: column;
+}
+.photos {
+    display: flex;
+    max-width: 1280px;
+    width: 100%;
+    height: min-content;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    overflow-x: hidden;
+    scroll-behavior:smooth
+}
+.boxdirect {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    background-color: gray;
+    display: flex;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    margin: 0 1vw 0 1vw;
+    z-index: 1;
+}
+
+#A {
+    left: 0;
+    opacity: 0.7;
+}
+
+#B {
+    right: 0;
+    opacity: 0.7;
+}
+
+#boxheart {
+    display: none;
+}
+.ones {
+    display: flex;
+    width: 100vw;
+    position: relative;
+    left: 100vw;
+}
+.thows {
+    display: flex;
+    position: relative;
+    width: 100vw;
+    left: 100vw;
+
+}
+.threes {
+    display: flex;
+    position: relative;
+    width: 100vw;
+    left: 100vw;
+}
+
+.suns p {
+    text-align: center;
+}
+
+.boxofglass h2{
+    color: black;
+}
+
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 2vh;
+    color: gray;
+}
+
+.all {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2vh;
+    justify-content: center;
+    align-items: center;
+    gap: 3vh;
+}
+
+.quantité {
+    margin: none;
+    box-sizing: border-box;
+    height: min-content;
+    width: min-content;
+    border: solid 1px black;
+    flex-direction: row;
+    display: flex;
+    border-radius: 15px;
+
+}
+input[type="number"]{
+    -moz-appearance: textfield;
+    text-align: center;
+    font-size: 15px;
+    border: none;
+    color: #202030;
+    width: 10vw;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+-webkit-appearance: none;
+margin: 0;
+}
+
+.yeah {
+    margin: 0 0 0 4vw;
+    border: solid 1px black;
+    border-radius: 15px;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: rgb(90, 216, 255);
+}
+
+button {
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: white;
+    padding: 0 10px 0 10px;
+}
+
+#buttons {
+    z-index: 3;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#moins {
+    padding: 7px 3px 7px 14px;
+    border-radius: 15px 0 0 15px;
+}
+
+#plus {
+    padding: 7px 14px 7px 3px;
+    border-radius: 0 15px 15px 0;
+}
