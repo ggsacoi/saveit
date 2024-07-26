@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const ocean = document.getElementById('ocean');
     const carrote = document.getElementById('.carrote');
     const orange = document.getElementById('orange');
-    const span = document.getElementById('boxmdr');
+    const span = document.querySelector('.boxstore');
 
     const nuits = document.getElementById('nuits');
     const blanches = document.getElementById('blanches');
@@ -23,17 +23,41 @@ document.addEventListener("DOMContentLoaded", function() {
     const oranges = document.getElementById('oranges');
     const numbers = document.getElementsByClassName('.numbers').textContent;
 
-    let count = 0;
+    vitragenoirs.addEventListener('click', ()=> {
+        window.open("egain.html", "_top");
+    })
+    nuits.addEventListener('click', ()=> {
+        window.open("egain2.html", "_top");
+    })
+    bleumarines.addEventListener('click', ()=> {
+        window.open("egain3.html", "_top");
+    })
+    verts.addEventListener('click', ()=> {
+        window.open("egain4.html", "_top");
+    })
+    roses.addEventListener('click', ()=> {
+        window.open("egain5.html", "_top");
+    })
+    oranges.addEventListener('click', ()=> {
+        window.open("egain6.html", "_top");
+    })
+    natures.addEventListener('click', ()=> {
+        window.open("egain7.html", "_top");
+    })
 
-    function addNuit() {
-        count++; // Incrémente le compteur à chaque ajout
-        const newNuit = document.createElement('div');
-        newNuit.classList.add('nuit');
-        newNuit.textContent = `Nuit ${count}`; // Texte affiché
+    oceans.addEventListener('click', ()=> {
+        window.open("egain8.html", "_top");
+    })
 
-        targetSection.appendChild(newNuit); // Ajoute l'élément à la section cible
-    }
+    carrotes.addEventListener('click', ()=> {
+        window.open("egain9.html", "_top");
+    })
+    blanches.addEventListener('click', ()=> {
+        window.open("egain10.html", "_top");
+    })
 
-    span.addEventListener('click', addNuit);
+    span.addEventListener('click', ()=> {
+        window.open("store.html", "_top");
+    });
 
 });
