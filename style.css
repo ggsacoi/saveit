@@ -222,7 +222,6 @@
         align-items: center;
         justify-content: center;
         margin: 0 1vw 0 1vw;
-        z-index: 2;
     } 
     .boxstore {
         width: 2rem;
@@ -287,12 +286,6 @@
     .one {
         width: 47vw;
 
-    }
-    .thow {
-        display: none;
-    }
-    .three {
-        display: none;
     }
 
     h4 {
