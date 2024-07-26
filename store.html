@@ -6,6 +6,7 @@
     <title>user</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="stylenav.css">
+    <script src="https://pay.google.com/gp/p/js/pay.js" async></script>
 </head>
 <body>
     <nav class="navbar"> 
@@ -44,10 +45,11 @@
             </div>
 </nav>
     <section class="paginationheart" id="">
-        <span class="boxdevice" id="boxheart">
+        <div id="container"></div>
+        <span class="boxdevice" id="boxmdr">
             <i class="fa-solid fa-eye"></i>
         </span>
-        <div class="item">
+        <div class="item" id="nuit">
             <div class="imgcontent">
                 <img src="hawkers-one-raw-polarized-air-sky-HONR21TLTP-d1.jpg" class="lastseenimg">
             </div>
@@ -58,7 +60,7 @@
                 <i class="fa-solid fa-cart-shopping fa-flip-horizontal"></i>
             </span>
         </div>
-        <div class="item">
+        <div class="item" id="blanche">
             <div class="imgcontent">
                 <img src="hawkers-boost-white-dark-blue-HBOO24HLT0-d1.jpg" class="lastseenimg">
             </div>
@@ -69,7 +71,7 @@
                 <i class="fa-solid fa-cart-shopping fa-flip-horizontal"></i>
             </span>
         </div>
-        <div class="item">
+        <div class="item" id="bleumarine">
             <div class="imgcontent">
                 <img src="hawkers-one-uptown-blue-ocean-HOUP21LLX0-d1.jpg" class="lastseenimg">
             </div>
@@ -80,7 +82,7 @@
                 <i class="fa-solid fa-cart-shopping fa-flip-horizontal"></i>
             </span>
         </div>
-        <div class="item">
+        <div class="item" id="vert">
             <div class="imgcontent">
                 <img src="hawkers-one-uptown-green-dark-HOUP21EBX0-d1.jpg" class="lastseenimg">
             </div>
@@ -91,7 +93,7 @@
                 <i class="fa-solid fa-cart-shopping fa-flip-horizontal"></i>
             </span>
         </div>
-        <div class="item">
+        <div class="item" id="rose">
             <div class="imgcontent">
                 <img src="hawkers-radiante-pink-salmon-HRAD24KKT0-d1.jpg" class="lastseenimg">
             </div>
@@ -102,9 +104,68 @@
                 <i class="fa-solid fa-cart-shopping fa-flip-horizontal"></i>
             </span>
         </div>
+        <div class="item" id="orange">
+            <div class="imgcontent">
+                <img src=hawkers-speed-fluor-orange-ruby-HSPD24ORT0-d1.jpg"" class="lastseenimg">
+            </div>
+            <div class="titlecontent">
+                <h4>lunettes rose</h4>
+            </div>
+            <span class="boxstores">
+                <i class="fa-solid fa-cart-shopping fa-flip-horizontal"></i>
+            </span>
+        </div>
+        <div class="item" id="nature">
+            <div class="imgcontent">
+                <img src="hawkers-one-uptown-green-dark-HOUP21EBX0-d1.jpg" class="lastseenimg">
+            </div>
+            <div class="titlecontent">
+                <h4>lunettes rose</h4>
+            </div>
+            <span class="boxstores">
+                <i class="fa-solid fa-cart-shopping fa-flip-horizontal"></i>
+            </span>
+        </div>
+        <div class="item" id="vitragenoir">
+            <div class="imgcontent">
+                <img src="hawkers-boost-white-dark-blue-HBOO24HLT0-d1.jpg" class="lastseenimg">
+            </div>
+            <div class="titlecontent">
+                <h4>lunettes transparante vitrage bleu nuit</h4>
+            </div>
+            <span class="boxstores">
+                <i class="fa-solid fa-cart-shopping fa-flip-horizontal"></i>
+            </span>
+        </div>
+        <div class="item" id="ocean">
+            <div class="imgcontent">
+                <img src="hawkers-one-uptown-blue-ocean-HOUP21LLX0-d1.jpg" class="lastseenimg">
+            </div>
+            <div class="titlecontent">
+                <h4>lunettes transparante vitrage bleu nuit</h4>
+            </div>
+            <span class="boxstores">
+                <i class="fa-solid fa-cart-shopping fa-flip-horizontal"></i>
+            </span>
+        </div>
+        <div class="item" id="carrote">
+            <div class="imgcontent">
+                <img src="hawkers-speed-fluor-orange-ruby-HSPD24ORT0-d1.jpg" class="lastseenimg">
+            </div>
+            <div class="titlecontent">
+                <h4>lunettes transparante vitrage bleu nuit</h4>
+            </div>
+            <span class="boxstores">
+                <i class="fa-solid fa-cart-shopping fa-flip-horizontal"></i>
+            </span>
+        </div>
     </section>
     <script src="https://kit.fontawesome.com/d28f9485ed.js" crossorigin="anonymous"></script>
-    <script src="research"></script>
+    <script src="research.js"></script>
     <script src="I'll do that.js"></script>
+   <script src="expectation.js"></script>
+    <script async
+      src="https://pay.google.com/gp/p/js/pay.js"
+      onload="paymentDataCallbacks"></script>
 </body>
 </html>
