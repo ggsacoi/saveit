@@ -11,6 +11,7 @@ body {
     justify-content: center;
     align-items: center;
     color: black;
+    z-index: 1;
 }
 
 .contact-container {
@@ -22,6 +23,7 @@ body {
     border: solid 1px black;
     box-shadow: 0px 10px 16px;
     align-items: center;
+    background-color: white;
 }
 
 .recadrage {
@@ -83,4 +85,30 @@ div p {
     width: min-content;
     padding: 0 10vw 0 10vw;
     border-radius: 10px;
+}
+
+.decor {
+    top: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.item {
+    width: 49vw;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    border: solid 1px red;
+    flex-direction: column;
+    overflow: none;
+}
+.photo {
+    display: flex;
+    height: 48vw;
+    width: 50vw;
+    justify-content: center;
+    border-bottom: solid 0.5px red;
+    border-right: solid 0.5px red;
+    opacity: 0.5;
 }
