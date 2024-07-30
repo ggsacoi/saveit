@@ -9,7 +9,7 @@ body{
 .suns {
     display: flex;
     top: 70px;
-    min-height: 100vh;
+    min-height: 103vh;
 }
 .navbar {
     width: 100VW;
