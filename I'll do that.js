@@ -2,7 +2,7 @@ const slider = () => {
     const buttonleft = document.getElementById("A");
     const buttonright = document.getElementById("B");
     const slider = document.querySelector(".photos");
-    const section = document.querySelector("section");
+    const section = document.querySelector('section');
     const menu = document.querySelector(".options");
     const checker = document.getElementById("see");
     const scrollAmount = window.innerWidth;
@@ -17,12 +17,6 @@ const slider = () => {
     buttonleft.addEventListener("click", ()=> {
         if (slider) { 
             slider.scrollLeft -= scrollAmount;
-        }
-    });
-
- section.addEventListener("click", () => {
-        if (checker.checked) {
-            checker.checked = false;
         }
     });
  };
