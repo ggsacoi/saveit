@@ -1,15 +1,13 @@
 
 body{
     display: flex ;
-    height: max-content;
     flex-direction: column;
     overflow-x: hidden;
-    min-height: 132vh;
 }
 .suns {
     display: flex;
     top: 70px;
-    min-height: 130vh;
+    min-height: min-content;
 }
 .navbar {
     width: 100VW;
@@ -29,7 +27,7 @@ body{
 .boxofglass {
     position: relative;
     width: 100vw;
-    height: 100vh;
+    height: min-content;
     display: flex;
     align-items: center;
     background-color: rgb(255, 255, 255);
@@ -176,6 +174,6 @@ button {
     padding: 7px 14px 7px 3px;
     border-radius: 0 15px 15px 0;
 }
-.container {
+#container {
     margin-bottom: 50px;
 }
