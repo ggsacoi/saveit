@@ -190,6 +190,7 @@
         width: auto;
         height: none;
         border: solid 1px black;
+        z-index: 2;
     }
 
     .list li {
