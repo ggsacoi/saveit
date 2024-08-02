@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function display(result){
         const content = result.map((item)=>{
             const regex = new RegExp(`(${inputBox.value})`, 'gi');
-            const highlightedText = item.value.replace(regex, "<mark>$1</mark>");
+            const highlightedText = item.value.replace();
             return `<li data-url="${item.url}">${highlightedText}</li>`;
         }).join("");
         resultBox.innerHTML = "<ul class='list'>" + content + "</ul>";
