@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const ocean = document.getElementById('ocean');
     const carrote = document.getElementById('.carrote');
     const orange = document.getElementById('orange');
-    const span = document.querySelector('.boxstore');
+    const span = document.querySelector('.boxdevices');
 
     const nuits = document.getElementById('nuits');
     const blanches = document.getElementById('blanches');
@@ -56,8 +56,36 @@ document.addEventListener("DOMContentLoaded", function() {
         window.open("egain10.html", "_top");
     })
 
-    span.addEventListener('click', ()=> {
-        window.open("store.html", "_top");
-    });
+    // span.addEventListener('click', ()=> {
+    //     window.open("egain10.html", "_top");
+    // });
 
+    let availableKeywords = [
+        'lunettes blanche',
+        'lunettes bleu nuit',
+        'lunettes bleumarine',
+        'lunettes ocean',
+    ];
+
+    const resultBox = document.querySelector('.things');
+    const inputBox = document.getElementById('input-box');
+
+    inputBox.onkeyup = function(){
+        let result = [];
+        let input = inputBox.value;
+        if(input.length > 0){
+            result = availableKeywords.filter((keyword)=>{
+               return keyword.toLowerCase().includes(input.toLowerCase());
+            });
+            console.log(result);
+        }
+        display(result);
+    }
+
+    function display(result){
+        const content = result.map((list)=>{
+            return"<li>" + list + "</li>";
+        }).join("");
+        resultBox.innerHTML = "<ul class='list'>" + content + "</ul>";
+    }
 });

@@ -39,3 +39,8 @@
       console.error("Sign-in button not found");
     }
   });
+  window.addEventListener("load", () => {
+    if(window.innerWidth <= 650) {
+      
+    }
+  });
