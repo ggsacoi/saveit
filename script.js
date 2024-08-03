@@ -1,8 +1,10 @@
 addEventListener('DOMContentLoaded', () => {
-const span = document.querySelector('.boxdevices');
+const spans = document.querySelectorAll('.boxdevices');
 
-span.addEventListener("click", (event) => {
-    event.stopPropagation();
-    window.open("c'estbien.html", "_top");
-  });
+spans.forEach(span => {
+    span.addEventListener("click", (event) => {
+      event.stopPropagation();
+      window.open("cestbien.html", "_top");
+    });
+});
 });
