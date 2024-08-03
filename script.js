@@ -16,46 +16,126 @@
     measurementId: "G-2HLPMNV82B"
   };
 
- // Initialisation Firebase
+// Initialiser Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
-// Fonction d'authentification
-const userSignIn = async() => {
+// Fonction pour gérer la connexion de l'utilisateur
+const userSignIn = async () => {
   try {
-    // Détecter le type d'appareil pour utiliser une méthode de connexion appropriée
+    // Détection de l'appareil : si mobile, utiliser signInWithRedirect
     if (/Mobi|Android/i.test(navigator.userAgent)) {
-      // Utiliser signInWithRedirect pour les appareils mobiles
+      // Pour les appareils mobiles
       await signInWithRedirect(auth, provider);
     } else {
-      // Utiliser signInWithPopup pour les navigateurs de bureau
+      // Pour les ordinateurs de bureau
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
-      console.log('User signed in:', user);
+      console.log("Utilisateur connecté:", user);
+      // Mettre à jour l'interface utilisateur
+      updateUI(user);
     }
   } catch (error) {
     const errorCode = error.code;
-    const errorMessage = error.message; // Correction de l'erreur de syntaxe
-    console.error(`Error (${errorCode}): ${errorMessage}`);
+    const errorMessage = error.message;
+    console.error(`Erreur (${errorCode}): ${errorMessage}`);
+    // Afficher une alerte en cas d'erreur
+    alert(`Erreur lors de la connexion: ${errorMessage}`);
   }
 };
 
-document.addEventListener('DOMContentLoaded', () => {
-  const signInButton = document.getElementById("logbutton");
-  if (signInButton) {
-    signInButton.addEventListener('click', userSignIn);
+// Fonction pour gérer la déconnexion de l'utilisateur
+const userSignOut = async () => {
+  try {
+    await signOut(auth);
+    console.log("Utilisateur déconnecté avec succès.");
+    alert("Vous avez été déconnecté.");
+    // Mettre à jour l'interface utilisateur
+    updateUI(null);
+  } catch (error) {
+    console.error("Erreur lors de la déconnexion:", error);
+    alert("Erreur lors de la déconnexion.");
+  }
+};
+
+// Gestion de l'état de l'authentification
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    console.log("L'utilisateur est connecté:", user);
+    // Mettre à jour l'interface utilisateur
+    updateUI(user);
   } else {
-    console.error("Sign-in button not found");
+    console.log("Aucun utilisateur n'est connecté.");
+    // Mettre à jour l'interface utilisateur
+    updateUI(null);
   }
 });
 
-// Gérer l'état de l'authentification
-onAuthStateChanged(auth, (user) => {
-  if (user) {
-    console.log('User is signed in:', user);
-    // Ici, vous pouvez afficher les informations de l'utilisateur ou rediriger vers une autre page
+// Gérer le résultat de la redirection (pour mobile)
+const handleRedirectResult = async () => {
+  try {
+    const result = await getRedirectResult(auth);
+    if (result) {
+      const user = result.user;
+      console.log("Utilisateur connecté après redirection:", user);
+      // Mettre à jour l'interface utilisateur
+      updateUI(user);
+    }
+  } catch (error) {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.error(`Erreur lors de la redirection (${errorCode}): ${errorMessage}`);
+  }
+};
+
+// Appeler la fonction pour vérifier le résultat de la redirection
+handleRedirectResult();
+
+document.addEventListener("DOMContentLoaded", () => {
+  const signInButton = document.getElementById("logbutton");
+  const signOutButton = document.getElementById("logoutbutton");
+
+  if (signInButton) {
+    signInButton.addEventListener("click", userSignIn);
   } else {
-    console.log('No user is signed in.');
+    console.error("Bouton de connexion introuvable");
+  }
+
+  if (signOutButton) {
+    signOutButton.addEventListener("click", userSignOut);
+  } else {
+    console.error("Bouton de déconnexion introuvable");
   }
 });
+
+// Fonction pour mettre à jour l'interface utilisateur
+function updateUI(user) {
+  const userStatus = document.getElementById("user-status");
+  const signInButton = document.getElementById("logbutton");
+  const signOutButton = document.getElementById("logoutbutton");
+
+  if (user) {
+    // L'utilisateur est connecté
+    if (userStatus) {
+      userStatus.textContent = `Connecté en tant que ${user.email}`;
+    }
+    if (signInButton) {
+      signInButton.style.display = "none";
+    }
+    if (signOutButton) {
+      signOutButton.style.display = "block";
+    }
+  } else {
+    // Aucun utilisateur connecté
+    if (userStatus) {
+      userStatus.textContent = "Aucun utilisateur n'est connecté.";
+    }
+    if (signInButton) {
+      signInButton.style.display = "block";
+    }
+    if (signOutButton) {
+      signOutButton.style.display = "none";
+    }
+  }
+}
