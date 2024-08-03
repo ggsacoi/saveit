@@ -3,7 +3,7 @@
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
-  import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+  import { getAuth, GoogleAuthProvider, signInWithPopup, signInWithRedirect, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   const firebaseConfig = {
@@ -16,31 +16,46 @@
     measurementId: "G-2HLPMNV82B"
   };
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
-  const provider = new GoogleAuthProvider()
-  const userSignIn = async() => {
-    signInWithPopup(auth, provider)
-    .then((result) => {
-      const user = result.user;
-      console.log(user);
-    }).catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.Message;
-      console.error(`Error (${errorCode}): ${errorMessage}`);
-    });
-  };
-  document.addEventListener('DOMContentLoaded', () => {
-    const signInButton = document.getElementById("logbutton");
-    if (signInButton) {
-      signInButton.addEventListener('click', userSignIn);
+ // Initialisation Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
+
+// Fonction d'authentification
+const userSignIn = async() => {
+  try {
+    // Détecter le type d'appareil pour utiliser une méthode de connexion appropriée
+    if (/Mobi|Android/i.test(navigator.userAgent)) {
+      // Utiliser signInWithRedirect pour les appareils mobiles
+      await signInWithRedirect(auth, provider);
     } else {
-      console.error("Sign-in button not found");
+      // Utiliser signInWithPopup pour les navigateurs de bureau
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+      console.log('User signed in:', user);
     }
-  });
-  window.addEventListener("load", () => {
-    if(window.innerWidth <= 650) {
-      
-    }
-  });
+  } catch (error) {
+    const errorCode = error.code;
+    const errorMessage = error.message; // Correction de l'erreur de syntaxe
+    console.error(`Error (${errorCode}): ${errorMessage}`);
+  }
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  const signInButton = document.getElementById("logbutton");
+  if (signInButton) {
+    signInButton.addEventListener('click', userSignIn);
+  } else {
+    console.error("Sign-in button not found");
+  }
+});
+
+// Gérer l'état de l'authentification
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    console.log('User is signed in:', user);
+    // Ici, vous pouvez afficher les informations de l'utilisateur ou rediriger vers une autre page
+  } else {
+    console.log('No user is signed in.');
+  }
+});
