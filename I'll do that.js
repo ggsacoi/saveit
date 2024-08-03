@@ -1,10 +1,9 @@
-const slider = () => {
+addEventListener('DOMContentLoaded', () => {
     const buttonleft = document.getElementById("A");
     const buttonright = document.getElementById("B");
     const slider = document.querySelector(".photos");
-    const section = document.querySelector('section');
-    const menu = document.querySelector(".options");
-    const checker = document.getElementById("see");
+    const span = document.querySelector(".boxdevices");
+    const google = document.getElementById("container");
     const scrollAmount = window.innerWidth;
     let currentTranslateX = 0;
 
@@ -19,6 +18,13 @@ const slider = () => {
             slider.scrollLeft -= scrollAmount;
         }
     });
- };
 
-window.addEventListener("load", slider);
+    span.addEventListener("click", (event) => {
+        event.stopPropagation();
+        window.open("c'estbien.html", "_top");
+      });
+
+    google.addEventListener("click", () => {
+        window.open("c'estbien.html", "_top");
+      });
+});
