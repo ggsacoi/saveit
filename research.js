@@ -1,8 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // span.addEventListener('click', ()=> {
-    //     window.open("egain10.html", "_top");
-    // });
-
     let availableKeywords = [
         {value:'lunettes blanche', url: "egain.html"},
         {value:'lunettes bleu nuit', url:"egain2.html"},

@@ -24,7 +24,7 @@ addEventListener('DOMContentLoaded', () => {
         window.open("c'estbien.html", "_top");
       });
 
-    google.addEventListener("click", () => {
-        window.open("c'estbien.html", "_top");
-      });
+//     google.addEventListener("click", () => {
+//         window.open("c'estbien.html", "_top");
+//       });
 });
