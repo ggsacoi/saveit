@@ -1,5 +1,7 @@
     import { items } from './store.js';
 
+    import { numbersElement } from './research.js';
+
     document.addEventListener("DOMContentLoaded", function() {
 
     const nuits = document.getElementById('nuits');
@@ -54,7 +56,16 @@
 
             // Enregistrer la liste mise à jour dans le localStorage
             localStorage.setItem('selectedItem', JSON.stringify(selectedItems));
-        });
+        
+
+      let numbers = parseInt(numbersElement.textContent);
+
+
+      let newNumbers = numbers + 1;
+
+      numbersElement.textContent = newNumbers;
+
+    //   export { numbersElement };
     });
 
     span.addEventListener('click', (event) => {
@@ -84,10 +95,4 @@
     });
 
 });
-
-// window.addEventListener('beforeunload', function () {
-//     // Effacer toutes les clés de localStorage
-//     localStorage.clear();
-//     // Optionnel : Afficher un message à l'utilisateur (ne fonctionne pas dans tous les navigateurs)
-//     // return 'Les données locales seront effacées lors de la fermeture de la fenêtre.';
-// });
+    });

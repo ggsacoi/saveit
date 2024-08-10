@@ -1,3 +1,8 @@
+let numbersElement = document.querySelector('.numbers');
+
+export { numbersElement };
+
+
 document.addEventListener("DOMContentLoaded", function() {
     let availableKeywords = [
         {value:'lunettes blanche', url: "egain.html"},
@@ -52,4 +57,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             }
         }
+
+
 });
