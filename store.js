@@ -47,7 +47,7 @@
         quitlogo.className = 'boxstores';
 
         const logo = document.createElement('i');
-        logo.className = "fa-solid fa-cart-shopping fa-flip-horizontal";
+        logo.className = "fa-solid fa-xmark";
 
         imgContentDiv.appendChild(img);
         quitlogo.appendChild(logo);

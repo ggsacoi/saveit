@@ -56,7 +56,6 @@
             localStorage.setItem('selectedItem', JSON.stringify(selectedItems));
         });
     });
-});
 
     span.addEventListener('click', (event) => {
         window.open("store.html", "_top");
