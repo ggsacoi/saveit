@@ -59,4 +59,13 @@
         parentContainer.appendChild(itemDiv);
     }
     });
+    const darkBtn = document.querySelector('.localmouve');
+
+    darkBtn.addEventListener('click', () => {
+        localStorage.removeItem('text');
+        localStorage.removeItem('numbersElement,textContent');
+        localStorage.removeItem('selectedItem');
+        location.reload();
+
+    });
 });

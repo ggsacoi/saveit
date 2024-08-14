@@ -83,7 +83,6 @@
                 let thenumbersLength = thenumbers.length;
 
 itwork.textContent = thenumbersLength
-let lenombre = itwork.textContent;
 localStorage.setItem('text', itwork.textContent);
     });
 
