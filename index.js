@@ -1,9 +1,5 @@
     import { items } from './store.js';
 
-    import { numbersElement } from './research.js';
-
-    document.addEventListener("DOMContentLoaded", function() {
-
     const nuits = document.getElementById('nuits');
     const blanches = document.getElementById('blanches');
     const bleumarines = document.getElementById('bleumarines');
@@ -28,6 +24,12 @@
         carrotes,
         oranges
     ];
+
+ export { objects };
+
+ document.addEventListener("DOMContentLoaded", function() {
+
+    let itwork = document.querySelector('.numbers');
 
     objects.forEach((object) => {
         object.addEventListener('click', (event) => {
@@ -56,16 +58,33 @@
 
             // Enregistrer la liste mise à jour dans le localStorage
             localStorage.setItem('selectedItem', JSON.stringify(selectedItems));
-        
 
-      let numbers = parseInt(numbersElement.textContent);
+                // Récupérer l'élément actuel du localStorage
+                let thenumbers = localStorage.getItem('numbersElement,textContent');
 
+                // Vérifier si selectedItems existe et s'il est en format JSON valide
+                if (thenumbers) {
+                    try {
+                        thenumbers = JSON.parse(thenumbers);
+                    } catch (e) {
+                        // Si ce n'est pas un tableau JSON valide, on le transforme en tableau
+                        thenumbers = [thenumbers];
+                    }
+                } else {
+                    // Si selectedItems n'existe pas encore, initialiser avec un tableau vide
+                    thenumbers = [];
+                }
+    
+                    thenumbers.push('Mervie');
+    
+                // Enregistrer la liste mise à jour dans le localStorage
+                localStorage.setItem('numbersElement,textContent', JSON.stringify(thenumbers));
 
-      let newNumbers = numbers + 1;
+                let thenumbersLength = thenumbers.length;
 
-      numbersElement.textContent = newNumbers;
-
-    //   export { numbersElement };
+itwork.textContent = thenumbersLength
+let lenombre = itwork.textContent;
+localStorage.setItem('text', itwork.textContent);
     });
 
     span.addEventListener('click', (event) => {
@@ -93,6 +112,5 @@
             });
         }
     });
-
-});
     });
+});

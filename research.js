@@ -1,9 +1,9 @@
-let numbersElement = document.querySelector('.numbers');
-
-export { numbersElement };
-
-
+const nasilisi = document.querySelector('.numbers');
 document.addEventListener("DOMContentLoaded", function() {
+
+    let nayebité = localStorage.getItem('text');
+    nasilisi.textContent = nayebité;
+
     let availableKeywords = [
         {value:'lunettes blanche', url: "egain.html"},
         {value:'lunettes bleu nuit', url:"egain2.html"},
@@ -57,6 +57,4 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             }
         }
-
-
 });
