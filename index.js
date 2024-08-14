@@ -110,6 +110,6 @@ localStorage.setItem('text', itwork.textContent);
                 window.open(url, '_top');
             });
         }
-    });
+      });
     });
 });
