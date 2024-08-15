@@ -2,6 +2,7 @@ addEventListener('DOMContentLoaded', () => {
     const section = document.querySelector('section');
     const menu = document.querySelector(".options");
     const checker = document.getElementById("see");
+    const gohome = document.querySelector(".name");
 section.addEventListener("click", () => {
     if (checker.checked) {
         checker.checked = false;
@@ -21,5 +22,9 @@ baelokonioso.forEach(({ element, url }) => {
             window.open(url, '_top');
         });
     }
+  });
+
+  gohome.addEventListener('click', () => {
+    window.open('index.html', '_top');
   });
 });
