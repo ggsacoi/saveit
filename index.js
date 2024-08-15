@@ -27,8 +27,9 @@
 
  export { objects };
 
- document.addEventListener("DOMContentLoaded", function() {
 
+
+ document.addEventListener("DOMContentLoaded", function() {
     let itwork = document.querySelector('.numbers');
 
     objects.forEach((object) => {

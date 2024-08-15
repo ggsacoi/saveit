@@ -1,4 +1,5 @@
 const myInput = document.getElementById("many");
+const object = document.querySelector('.boxdevices');
 function stepper(btn){
     let id = btn.getAttribute("id");
     let min = myInput.getAttribute("min");
@@ -12,5 +13,4 @@ function stepper(btn){
     if(newValue >= min && newValue <= max) {
         myInput.setAttribute("value", newValue);
     }
-    
 }

@@ -40,8 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Utilisateur connecté
         const user = userCredential.user;
         alert(`Utilisateur connecté : ${user.email}`);
-        // Redirection vers une autre page
-        window.location.href = "index.html"; 
         // Vous pouvez maintenant utiliser l'objet user pour d'autres opérations
       } catch (error) {
         const errorCode = error.code;
